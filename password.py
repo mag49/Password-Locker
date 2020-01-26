@@ -2,7 +2,7 @@ import pyperclip
 
 class Credential:
 
-  """
+    """
     Class that generates new instances of credentials.
     """
 
@@ -57,7 +57,7 @@ class Credential:
         pyperclip.copy(credential_found.email)    
 
 
-     @classmethod
+    @classmethod
     def authenticate_credentials(cls, user_name, email, password):
         '''
         Method that checks if the username email and password are correct
@@ -67,12 +67,12 @@ class Credential:
                 return credential
         return 0
 
-class user_infomation:
+class userInfomation:
     '''
     class that generates new instance of users
     '''
     user_info_list = []
-    user_info_list2 = str(user_list)
+    user_info_list2 = str(user_info_list)
 
     def __init__(self, account_name,account_username, account_email, account_password):
         '''
@@ -88,7 +88,7 @@ class user_infomation:
         '''
         return User_info.user_info_list.append(self)
 
-     def create_password(self):
+    def create_password(self):
         '''
         creates a password and acc name
         '''
@@ -110,3 +110,12 @@ class user_infomation:
         for found in cls.user_info_list2:
             if found == account_name:
                 return found
+
+    @classmethod
+    def information_exists(cls, account_name):
+        '''
+        Checks if user information exists
+        '''
+        for information in cls.user_information_list:
+            if information.account_name == account_name:
+                return information
