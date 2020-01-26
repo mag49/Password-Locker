@@ -67,12 +67,12 @@ class Credential:
                 return credential
         return 0
 
-class user:
+class user_infomation:
     '''
     class that generates new instance of users
     '''
-    user_list = []
-    user_list2 = str(user_list)
+    user_info_list = []
+    user_info_list2 = str(user_list)
 
     def __init__(self, account_name,account_username, account_email, account_password):
         '''
@@ -86,10 +86,27 @@ class user:
         '''
         creates an email
         '''
-        return User.user_list.append(self)
+        return User_info.user_info_list.append(self)
 
      def create_password(self):
         '''
         creates a password and acc name
         '''
-        return User.user_list.append(self)    
+        return User_info.user_info_list.append(self)    
+
+    @classmethod
+    def find_user_info(cls):
+        '''
+        Displays all passwords and other acc details 
+        '''
+        return cls.user_info_list 
+
+    @classmethod
+    def find_by_account_name(cls, account_name):
+        '''
+        Finds user information using the user account name
+        '''
+
+        for found in cls.user_info_list2:
+            if found == account_name:
+                return found
