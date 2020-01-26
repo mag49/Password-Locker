@@ -62,6 +62,15 @@ class Testcredential(unittest.TestCase):
         self.assertEqual(self.new_user_information.account_name, "facebook")
         self.assertEqual(self.new_user_information.account_user_name, "maggiebae")
         self.assertEqual(self.new_user_information.account_password, "pass")
+    
+    def test_add_password(self):
+        '''
+        Testing if the new website and password can be saved
+        '''
+        self.new_user_information.create_password()
+        self.assertEqual(len(UserInformation.user_information_list),1)
+
+
 
 
 
