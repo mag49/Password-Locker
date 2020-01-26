@@ -34,3 +34,19 @@ class Credential:
         '''
 
         Credential.credential_list.remove(self)
+
+    @classmethod
+    def find_credential(cls,username):
+        '''
+        Method that finds if the username exist and returns a username that matches that email.
+
+        Args:
+            username: username to search for
+        Returns :
+            name of person that matches the username.
+        '''
+
+        for credential in cls.credential_list:
+            if credential.user_name == user_name:
+                return True
+        return False
