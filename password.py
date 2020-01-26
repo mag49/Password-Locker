@@ -9,5 +9,11 @@ class Credential:
     credential_list = [] # Empty credential list
     
 
-    def __init__(self,username,email,password):
-   
+    def __init__(self,user_name,email,password):
+
+        self.user_name = user_name
+        self.email= email
+        self.password=password
+        
+
+         # Init method up here
