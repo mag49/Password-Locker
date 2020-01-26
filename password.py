@@ -68,8 +68,28 @@ class Credential:
         return 0
 
 class user:
-     '''
+    '''
     class that generates new instance of users
     '''
     user_list = []
     user_list2 = str(user_list)
+
+    def __init__(self, account_name,account_username, account_email, account_password):
+        '''
+        '''
+        self.account_name = account_name
+        self.account_username =  account_username
+        self.account_email = account_email
+        self.account_password = account_password
+
+    def create_email(self):
+        '''
+        creates an email
+        '''
+        return User.user_list.append(self)
+
+     def create_password(self):
+        '''
+        creates a password and acc name
+        '''
+        return User.user_list.append(self)    
