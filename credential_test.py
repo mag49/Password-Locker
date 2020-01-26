@@ -1,5 +1,5 @@
 from password import  Credential
-from password import UserInformation
+
 import pyperclip
 import unittest
 
@@ -27,7 +27,7 @@ class Testcredential(unittest.TestCase):
         Test for case initialization
         '''
         self.assertEqual(self.new_credentials.user_name, "maggiebae")
-        self.assertEqual(self.new_credentials.passwOrd, "pass")
+        self.assertEqual(self.new_credentials.password, "pass")
 
     def test_authentication(self):
         '''
@@ -38,8 +38,8 @@ class Testcredential(unittest.TestCase):
 
 
     class TestUserInformation(unittest.TestCase):
-    '''
-    '''
+        '''
+        '''
 
 
     def setUp(self):
@@ -71,6 +71,20 @@ class Testcredential(unittest.TestCase):
         self.assertEqual(len(UserInformation.user_information_list),1)
 
 
+    def test_show_information(self):
+        '''
+        Testing if the data can be displayed.
+        '''
+        self.new_user_information.create_password()
+        test_this = UserInformation("instagram","maggiebae", "pass")
+        test_this.create_password()
+
+        found_user_information = UserInformation.show_user_information("instagram")
+        self.assertEqual(found_user_information.account_name,test_this.account_name)
+
+
+if __name__ == "__main__":
+    unittest.main()
 
 
 
