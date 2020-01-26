@@ -17,3 +17,10 @@ class Credential:
         
 
          # Init method up here
+    def save_credentials(self):
+
+        '''
+        save_credentials method saves credential objects into credential_list
+        '''
+
+        Credential.credential_list.append(self)
