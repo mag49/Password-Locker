@@ -37,3 +37,16 @@ class Testcredential(unittest.TestCase):
         self.assertEqual(len(Credential.credential_list), 1)
 
 
+    class TestUserInformation(unittest.TestCase):
+    '''
+    '''
+
+
+    def setUp(self):
+        '''
+        set up structure before every test
+        '''
+        self.new_user_information = UserInformation("facebook","maggiebae","pass")
+
+
+
