@@ -38,15 +38,31 @@ class Credential:
     @classmethod
     def find_credential(cls,username):
         '''
-        Method that finds if the username exist and returns a username that matches that email.
+        Method that finds if the username exist and returns true or false.
 
         Args:
             username: username to search for
         Returns :
-            name of person that matches the username.
+            Boolean: True or false depending on whether it exist
         '''
 
         for credential in cls.credential_list:
             if credential.user_name == user_name:
                 return True
         return False
+
+    @classmethod
+    def copy_email(cls,email):
+        credential_found = Contact.find_by_email(email)
+        pyperclip.copy(credential_found.email)    
+
+
+     @classmethod
+    def authenticate_credentials(cls, user_name, email, password):
+        '''
+        Method that checks if the username and password are correct
+        '''
+        for cred in cls.cred_list:
+            if cred.uname == uname and cred.passwrd == passwrd:
+                return cred
+        return 0
