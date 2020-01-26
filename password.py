@@ -60,9 +60,16 @@ class Credential:
      @classmethod
     def authenticate_credentials(cls, user_name, email, password):
         '''
-        Method that checks if the username and password are correct
+        Method that checks if the username email and password are correct
         '''
-        for cred in cls.cred_list:
-            if cred.uname == uname and cred.passwrd == passwrd:
-                return cred
+        for credential in cls.credential_list:
+            if credential.user_name == user_name and credential.email == email and credential.password == password:
+                return credential
         return 0
+
+class user:
+     '''
+    class that generates new instance of users
+    '''
+    user_list = []
+    user_list2 = str(user_list)
