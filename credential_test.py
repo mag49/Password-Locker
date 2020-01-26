@@ -49,4 +49,21 @@ class Testcredential(unittest.TestCase):
         self.new_user_information = UserInformation("facebook","maggiebae","pass")
 
 
+    def tearDown(self):
+        '''
+        clean up after running each test
+        '''
+        UserInformation.user_information_list = []
+
+    def test_init(self):
+        '''
+        Test for test case initialization"
+        '''
+        self.assertEqual(self.new_user_information.account_name, "facebook")
+        self.assertEqual(self.new_user_information.account_user_name, "maggiebae")
+        self.assertEqual(self.new_user_information.account_password, "pass")
+
+
+
+
 
