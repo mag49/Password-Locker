@@ -83,3 +83,42 @@ def create_password(password_length):
     created_password = random.sample(string.ascii_lowercase + string.digits + string.ascii_uppercase,password_length)
     password_list.append(''.join(created_password))
     return password_list
+
+
+def main():
+        print("Hello, welcome to password locker!, What is your name?")
+        user_name = input('Name:')
+        print(f'hello {user_name}. what would you like to do?')
+        print('\n')
+        while True:
+            print("Use the following short short codes : cc - create a new account, lg - log in , ex - exit")
+            short_code = input().lower()
+
+            if short_code == 'cc':
+                            print("New Account")
+                            print("-"*10)
+
+                            print ("username ....")
+                            user_name = input()
+
+                            print("password ...")
+                            password = input()
+                            save_credentials(create_credentials(user_name,email,password)) # create and save credentials
+                            print ('\n')
+                            print(f"Your new account with user_name : '{user_name}' email '{email}' and password '{password}' has been created")
+                            print ('\n')
+
+
+            elif short_code == "lg":
+                            print("Enter user_name, email and password to login:")
+                            print("-"*60)
+                            user_name = input("User_name: ")
+                            password = input("Password: ")
+                            log_in = authenticate_credentials(user_name, email, password)
+                            if log_in==0:
+                                print("\n")
+                                print("Invalid username and/or password")
+                                print("-"*30)
+                            elif log_in!=0:
+                                print("\n")
+                                print(f"Welcome {log_in.user_name}! What would you like to do?")
