@@ -18,3 +18,16 @@ def save_credentials(credential):
     function that saves credentials
     '''
     credential.save_credentials()
+
+
+def find_existing_credentials(user_name):
+    '''
+    function to test if credentials exist
+    '''
+    return Credential.credentials_exist(user_name)
+
+
+def authenticate_credentials(user_name, password):
+    '''
+    '''
+    return Credential.authenticate_credentials(user_name,password)
