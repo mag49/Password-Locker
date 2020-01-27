@@ -1,4 +1,4 @@
-import pyperclip
+# import pyperclip
 
 class Credential:
 
@@ -58,21 +58,21 @@ class Credential:
 
 
     @classmethod
-    def authenticate_credentials(cls, user_name, email, password):
+    def authenticate_credentials(cls, user_name, password):
         '''
         Method that checks if the username email and password are correct
         '''
         for credential in cls.credential_list:
-            if credential.user_name == user_name and credential.email == email and credential.password == password:
+            if credential.user_name == user_name and credential.password == password:
                 return credential
         return 0
 
-class userInfomation:
+class UserData:
     '''
     class that generates new instance of users
     '''
-    user_info_list = []
-    user_info_list2 = str(user_info_list)
+    user_data_list = []
+    user_data_list2 = str(user_data_list)
 
     def __init__(self, account_name,account_username, account_email, account_password):
         '''
@@ -86,36 +86,38 @@ class userInfomation:
         '''
         creates an email
         '''
-        return User_info.user_info_list.append(self)
+        return UserData.user_data_list.append(self)
 
     def create_password(self):
         '''
         creates a password and account name
         '''
-        return User_info.user_info_list.append(self)    
+        return UserData.user_data_list.append(self)    
+
+    # @classmethod
+    # def show_user_data(cls):
+    #     '''
+    #     Displays all passwords and other acc0unt details 
+    #     '''
+    #     return cls.user_data_list 
+
+    # @classmethod
+    # def show_user_data(cls, account_name):
+    #     '''
+    #     Finds user information using the user account name
+    #     '''
+
+    #     for found in cls.user_data_list2:
+    #         if found == account_name:
+    #             return found
 
     @classmethod
-    def find_user_info(cls):
-        '''
-        Displays all passwords and other acc0unt details 
-        '''
-        return cls.user_info_list 
-
-    @classmethod
-    def find_by_account_name(cls, account_name):
-        '''
-        Finds user information using the user account name
-        '''
-
-        for found in cls.user_info_list2:
-            if found == account_name:
-                return found
-
-    @classmethod
-    def information_exists(cls, account_name):
+    def data_exists(cls, account_name):
         '''
         Checks if user information exists
         '''
-        for information in cls.user_information_list:
-            if information.account_name == account_name:
-                return information
+        for data in cls.user_data_list:
+            if data.account_name == account_name:
+                return data
+
+    
