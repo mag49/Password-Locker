@@ -64,7 +64,7 @@ def information_exist(account_name):
     Function to check if the information exists
     '''
     return userInfomation.information_exists(account_name)
-    
+
 
 def find_user_information(account_name):
         '''
@@ -72,3 +72,14 @@ def find_user_information(account_name):
         '''
 
         return UserInformation.find_by_account_name(account_name)
+
+
+def create_password(password_length):
+    '''
+    Function that creates a new password
+    '''
+
+    password_list = []
+    created_password = random.sample(string.ascii_lowercase + string.digits + string.ascii_uppercase,password_length)
+    password_list.append(''.join(created_password))
+    return password_list
