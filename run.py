@@ -50,3 +50,10 @@ def create_new_information(myinformation):
     Function that creates new information to save user password
     '''
     myinformation.create_password()
+    
+
+def display_data():
+    '''
+    function to display the data
+    '''
+    return UserInformation.show_user_information()
