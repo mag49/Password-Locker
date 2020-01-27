@@ -57,10 +57,18 @@ def display_information():
     function to display the user information
     '''
     return UserInformation.show_user_information()
-    
+
 
 def information_exist(account_name):
     '''
     Function to check if the information exists
     '''
     return userInfomation.information_exists(account_name)
+    
+
+def find_user_information(account_name):
+        '''
+        function that finds the user credential information by account_name
+        '''
+
+        return UserInformation.find_by_account_name(account_name)
