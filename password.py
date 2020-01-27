@@ -90,14 +90,14 @@ class userInfomation:
 
     def create_password(self):
         '''
-        creates a password and acc name
+        creates a password and account name
         '''
         return User_info.user_info_list.append(self)    
 
     @classmethod
     def find_user_info(cls):
         '''
-        Displays all passwords and other acc details 
+        Displays all passwords and other acc0unt details 
         '''
         return cls.user_info_list 
 
